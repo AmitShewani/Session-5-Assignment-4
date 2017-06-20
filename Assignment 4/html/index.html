@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Assignment 5.4 - Front End Web Development Fundamentals</title>
+<style>
+h1
+{
+color: Blue;
+font-size: 25px;
+font-family: arial;
+text-decoration: underline;
+}
+body
+{
+font-size: 18px;
+font-family: sans-serif;
+}
+</style>
+</head>
+<body>
+    <h1>Javascript constructor object pattern tutorial!</h1><br>
+    <br>
+    <p>Employee details:</p><br>
+    <p id="empDetails"></p><br>
+    <p>updating basic salary to 25000 <br> Updated details are as follows:<br></p><br>
+    <p id="upd"></p>
+    <script type="text/javascript">
+    	function Employee(username, skills, basicSalary){
+   this.username = username;
+   this.skills = skills;
+   this.basicSalary = basicSalary;
+   this.printDetails = function(){
+       return "UserName: "+this.username+" skills: "+this.skills+" basicSalary: "+this.basicSalary+"<br>";
+   };
+   this.chageSalary=function(sal)
+   {
+    this.basicSalary=sal;
+   };
+}
+//Generate Employee object using function
+var emp=new Employee("testUSRName","Dev",12500);
+//updated the details
+document.getElementById("empDetails").innerHTML=emp.printDetails();
+//Update the salary to 25000
+emp.chageSalary(25000);
+//Print the latest changes
+document.getElementById("upd").innerHTML=emp.printDetails();
+
+    </script>
+</body>
+</html>
